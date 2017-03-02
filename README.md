@@ -2,21 +2,18 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/y7m9gmr8f2pjukq8?svg=true)](https://ci.appveyor.com/project/StefH/commandlineparser)
 
-* Now available as NuGet package: http://nuget.org/packages/CommandLineArgumentsParser
+[![NuGet Badge](https://buildstats.info/nuget/CommandLineArgumentsParser)](https://www.nuget.org/packages/CommandLineArgumentsParser)
 
 CommandLine Parser Library lets you easily define strongly typed command line arguments, allows automatic parsing of command line arguments and mapping the values to properites of your objects.
 
 See [Quick Start](https://github.com/j-maly/CommandLineParser/wiki) on how to use the library. 
 
 Support for the following Frameworks:
-* net20
-* net35
-* net40
-* net45
-* net45x
-* net46
-* dnx451
-* netstandard1.3
+* NET 2.0
+* NET 3.5
+* NET 4.0
+* NET 4.5 to NET 4.6.x
+* NETStandard 1.3
 
 ## Motivational Example
 
@@ -37,9 +34,9 @@ CommandLineParser.CommandLineParser parser =
 //switch argument is meant for true/false logic
 SwitchArgument showArgument = new SwitchArgument(
     's', "show", "Set whether show or not", true);
-ValueArgument<decimal> version = new ValueArgument<decimal>
+ValueArgument<decimal> version = new ValueArgument<decimal> (
     'v', "version", "Set desired version");
-EnumeratedValueArgument<string> color = new EnumeratedValueArgument<string>
+EnumeratedValueArgument<string> color = new EnumeratedValueArgument<string> (
     'c', "color", new string[] { "red", "green", "blue" });
 
 parser.Arguments.Add(showArgument);
